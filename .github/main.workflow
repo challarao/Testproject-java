@@ -1,8 +1,17 @@
-workflow "New workflow" {
-  on = "push"
-  resolves = ["GitHub Action for npm"]
-}
 
-action "GitHub Action for npm" {
-  uses = "actions/npm@59b64a598378f31e49cb76f27d6f3312b582f680"
-}
+name: "Synopsys Intelligent Security Scan"
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+    steps:
+    - uses: actions/checkout@v2
+    - name: Upload SARIF file
+      uses: github/codeql-action/upload-sarif@v1
+      with:
+        # Path to SARIF file relative to the root of the repository
+        sarif_file: workflowclient_initial_final_report.json 
