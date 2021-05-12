@@ -1,62 +1,5 @@
 {
-  "summary": [
-    {
-      "activity": "sca",
-      "overallcount": [
-        {
-          "severity": "low",
-          "count": 76
-        },
-        {
-          "severity": "medium",
-          "count": 44
-        }
-      ],
-      "breakercount": []
-    },
-    {
-      "activity": "sast",
-      "overallcount": [
-        {
-          "severity": "high",
-          "count": 11
-        },
-        {
-          "severity": "low",
-          "count": 10
-        },
-        {
-          "severity": "medium",
-          "count": 25
-        }
-      ],
-      "breakercount": [
-        {
-          "severity": "high",
-          "count": 11
-        }
-      ]
-    }
-  ],
-  "breaker": {
-    "status": true,
-    "criteria": [
-      {
-        "activityname": "sast",
-        "overall": [
-          "filesystem path, filename, or uri manipulation",
-          "cross-site scripting",
-          "resource leak",
-          "unsafe deserialization",
-          "cross-site request forgery",
-          "sql injection"
-        ],
-        "categories": null
-      }
-    ]
-  },
-  "connectors": [],
-  "sarifReport": {
+
     "$schema": "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json",
     "version": "2.1.0",
     "runs": [
@@ -361,5 +304,5 @@
         ]
       }
     ]
-  }
+  
 }
